@@ -18,20 +18,6 @@ const useFetchData = (filter , selectedLoc) => {
       url = `${URL}/esp/get_sensor_data/10`;
     }
 
-    // await axios.get(url, {
-    //     params: {
-    //       State: "Punjab",
-    //       City: "Jalandhar",
-    //       PinCode: "14401",
-    //       Landmark: "Jalandhar Cantt",
-    //     },
-    //     withCredentials: true,
-    //   })
-    //   .then((res) => setData(res.data))
-    //   .catch((error) => {
-    //     setError(error);
-    //     console.error("Error fetching data:", error);
-    //   });
 console.log("Selected Id= " , selectedLoc);
     await axios
       .get(url, {

@@ -1,20 +1,51 @@
-import React from "react";
+import React ,{useState , useEffect} from "react";
 import "./dashmain.css";
 import PageTitle from "./Pagettitle/PageTitle";
-import Dashboard from "./Dashboard";
-import UserProfile from "../UseProfile/UserProfile";
-import MonitorReadings from "./MonitorReadings/MonitorReadings";
-import UserComplaints from "./UserComplaints/UserComplaints";
+
+import Footer from "../Footer/Footer";
+import axios from "axios";
+import GoTtop from "../Footer/GoTtop";
+import { Outlet } from "react-router-dom";
+import useFetchLocation from "../../useFetchLocation";
 function DashMain() {
+  const url = import.meta.env.VITE_API_URL;
+  const [Pdata, setPdata] = useState(null);
+  const {loc  } = useFetchLocation();
+
+  useEffect(() => {
+    async function fetchdata() {
+      await axios
+        .get(`${url}/admin/getUser`, { withCredentials: true })
+        .then((res) => {
+          setPdata(res.data.admin);
+          console.log("Consoled data", res.data.admin);
+        })
+        .catch((error) => {
+          console.log("Error in fetching Profile ", error);
+        });
+    }
+
+    fetchdata();
+  }, []);
+
   return (
     <main id="main" className="main">
       <PageTitle page={"Dashboard"}></PageTitle>
 
-      <UserComplaints></UserComplaints>
+      <Outlet context={{Pdata , loc}} ></Outlet>
+
+      {/* <Login></Login> */}
+      {/* <SignUp></SignUp> */}
+
+      {/* <UserComplaints></UserComplaints> */}
       {/* <MonitorReadings></MonitorReadings> */}
 
       {/* <UserProfile></UserProfile> */}
       {/* <Dashboard></Dashboard>  */}
+
+      <GoTtop></GoTtop>
+
+      <Footer></Footer>
     </main>
   );
 }

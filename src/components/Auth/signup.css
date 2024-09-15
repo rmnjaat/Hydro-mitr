@@ -2,8 +2,10 @@
 .signup-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+    /* Uncomment For Independent */
+    /* align-items: center;
+    height: 100vh; */
     /* background: #e0f7fa; */
     background: var(--bgColor);
     /* Light cyan background for the container */

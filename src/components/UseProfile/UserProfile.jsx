@@ -1,6 +1,15 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 function UserProfile() {
+  const { Pdata, loc } = useOutletContext();
+  const loca = loc.location;
+
+  const locat = loca.find((item) => item._id == Pdata.Location);
+  console.log(locat);
+  if (!Pdata) {
+    return <p>Loading profile...</p>; // Show loading state until data is fetched
+  }
+
   return (
     <div className="row">
       <div className="col-lg-4">
@@ -24,18 +33,18 @@ function UserProfile() {
                   style={{ textAlign: "center", fontSize: "26px" }}
                 >
                   {" "}
-                  Raman Jangu
+                  {Pdata.Name} {Pdata.LastName}
                 </h2>
                 <h6
                   class=" card-subtitle "
                   style={{ textAlign: "center", marginBottom: "12px" }}
                 >
                   {" "}
-                  Staff
+                  Admin
                 </h6>{" "}
                 <h6 class="card-subtitle " style={{ textAlign: "center" }}>
                   {" "}
-                  MC developers Corporation Privbate Limited
+                  {Pdata.Org_name}
                 </h6>
               </div>
             </div>
@@ -50,38 +59,32 @@ function UserProfile() {
               Personal Information
             </h5>
             <p>
-              <strong>Name:</strong> Raman jangu
-            </p>
-            <p>
-              <strong>Gender:</strong> Male
-            </p>
-            <p>
-              <strong>Date of Birth:</strong> 28 March, 2005
+              <strong>Name:</strong> {Pdata.Name} {Pdata.LastName}
             </p>
 
             <h5 class="card-title">Contact Details</h5>
             <p>
-              <strong>Email:</strong> ramanjangu01@gmail.com
+              <strong>Email:</strong> {Pdata.Email}
             </p>
             <p>
-              <strong>Phone:</strong> 502030012012
+              <strong>Phone:</strong> {Pdata.PhoneNumber}
             </p>
 
             <h5 class="card-title">Assigned Worksite</h5>
             <p>
-              <strong>Landmark:</strong> Water house ,Chuli bagarian
+              <strong>Landmark:</strong> {locat.Landmark}
             </p>
             <p>
-              <strong>City:</strong> Hisar
+              <strong>City:</strong> {locat.City}
             </p>
             <p>
-              <strong>State:</strong> Haryana
+              <strong>State:</strong> {locat.State} 
             </p>
             <p>
               <strong>Country:</strong> India
             </p>
             <p>
-              <strong>Pin Code:</strong> 125052
+              <strong>Pin Code:</strong> {locat.PinCode}
             </p>
           </div>
         </div>

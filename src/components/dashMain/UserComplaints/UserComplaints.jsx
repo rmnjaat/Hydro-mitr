@@ -110,30 +110,62 @@ function UserComplaints() {
       <div className="row">
         {hardcodedFeedbacks.map((feedback, index) => (
           <div key={index} className="col-lg-6 mb-4">
-            <div className="card">
-              <div className="card-body" >
-                {/* <div className="card-title"  >
-                  <h5 className="user-name">
-                    <strong>{feedback.Name} {feedback.LastName}</strong>
-                  </h5>{" "}
-                </div> */}
-                <p style={{ marginTop: "14px", marginBottom: "5px" }}>
-                  <strong style={{color:"#414141"}}>Name : Raman Jangu</strong>
+            <div
+              className="card shadow-sm"
+              style={{ borderRadius: "10px", overflow: "hidden" }}
+            >
+              <div
+                className="card-body"
+                style={{ padding: "20px", backgroundColor: "#f9f9f9" }}
+              >
+                <p style={{ marginTop: "14px", marginBottom: "8px" }}>
+                  <strong style={{ color: "#414141", fontSize: "16px" }}>
+                    Name: Raman Jangu
+                  </strong>
                 </p>
-                <p>
-                  <strong style={{color:"#414141"}}>Mobile:</strong> {feedback.Mobile}
+                <p style={{ marginBottom: "8px" }}>
+                  <strong style={{ color: "#414141", fontSize: "16px" }}>
+                    Mobile:
+                  </strong>{" "}
+                  {feedback.Mobile}
                 </p>
 
-
-
-                <p>
-                  <strong style={{color:"#414141"}}>Complaint:</strong> {feedback.Complaint}
+                {/* Added spacing and highlighting for Complaint */}
+                <p
+                  style={{
+                    marginTop: "20px",
+                    padding: "10px",
+                    backgroundColor: "#fff7e6",
+                    borderRadius: "5px",
+                  }}
+                >
+                  <strong style={{ color: "#c0392b", fontSize: "16px" }}>
+                    Complaint:
+                  </strong>{" "}
+                  {feedback.Complaint}
                 </p>
 
-                <p>
-                  <strong style={{color:"#414141"}}>Image:</strong>
+                <p style={{ marginBottom: "12px", marginTop: "20px" }}>
+                  <strong style={{ color: "#414141", fontSize: "16px" }}>
+                    Image:
+                  </strong>
                 </p>
-                <img src="https://placehold.co/250x250" alt="" />
+                <div
+                  style={{ textAlign: "center", width: "100%", height: "auto" }}
+                >
+                  <img
+                    src="https://placehold.co/550x290"
+                    alt="Complaint image"
+                    style={{
+                      width: "100%", // Ensure the image fills the available width of the card
+                      height: "auto", // Maintain aspect ratio
+                      maxWidth: "100%", // Prevent overflow
+                      borderRadius: "8px",
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                      objectFit: "cover", // This ensures the image covers the container without distortion
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>

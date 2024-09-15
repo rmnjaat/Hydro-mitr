@@ -1,73 +1,81 @@
+// data.js
 const navList = [
   {
     _id: 1,
     name: "Profile",
     icon: "bi bi-person",
+    path: "/profile", // Added path
   },
-  {
-    _id: 2,
-    name: "Contact",
-    icon: "bi bi-envelope",
-  },
+  // {
+  //   _id: 2,
+  //   name: "Contact",
+  //   icon: "bi bi-envelope",
+  //   path: "/contact", // Added path
+  // },
   {
     _id: 3,
-    name: "Register",
+    name: " New Registration",
     icon: "bi bi-card-list",
+    path: "/register", // Added path
   },
-  {
-    _id: 4,
-    name: "Login",
-    icon: "bi bi-box-arrow-in-right",
-  },
-  {
-    _id: 5,
-    name: "Setting",
-    icon: "bi bi-gear",
-  },
-
-  {
-    _id: 6,
-    name: "F.A.Q",
-    icon: "bi bi-question-circle",
-  },
-  {
-    _id: 7,
-    name: "Blank",
-    icon: "bi bi-file-earmark",
-  },
+  
+  // {
+  //   _id: 5,
+  //   name: "Setting",
+  //   icon: "bi bi-gear",
+  //   path: "/settings", // Added path
+  // },
+  // {
+  //   _id: 6,
+  //   name: "F.A.Q",
+  //   icon: "bi bi-question-circle",
+  //   path: "/faq", // Added path
+  // },
+  // {
+  //   _id: 7,
+  //   name: "Blank",
+  //   icon: "bi bi-file-earmark",
+  //   path: "/blank", // Added path
+  // },
 ];
 
 const navItems = [
   {
     id: 1,
     title: "Monitor Readings",
-    icon: "bi bi-speedometer2",  // Updated to represent monitoring
+    icon: "bi bi-speedometer2",
+    path: "/monitoring", // Added path
   },
   {
     id: 2,
     title: "Image results",
-    icon: "bi bi-images",  // Updated to represent images
+    icon: "bi bi-images",
+    path: "/imageresults", // Added path
   },
   {
     id: 3,
     title: "Complaints",
-    icon: "bi bi-exclamation-circle",  // Updated to represent complaints/issues
+    icon: "bi bi-exclamation-circle",
+    path: "/complaints", // Added path
   },
   {
     id: 4,
     title: "Data Visualization",
-    icon: "bi bi-graph-up",  // Updated to represent data and graphs
+    icon: "bi bi-graph-up",
+    path: "/data-visualization", // Added path
   },
   {
     id: 5,
     title: "Staff Reports",
-    icon: "bi bi-file-earmark-text",  // Updated to represent reports
+    icon: "bi bi-file-earmark-text",
+    path: "/staff-reports", // Added path
   },
   {
     id: 6,
     title: "Sensors Locations",
-    icon: "bi bi-geo-alt",  // Updated to represent locations
+    icon: "bi bi-geo-alt",
+    path: "/sensorslocations", // Added path
   },
 ];
 
-export  {navList , navItems};
+export { navList, navItems };

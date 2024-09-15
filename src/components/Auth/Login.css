@@ -2,6 +2,8 @@
 .login-container {
     display: flex;
     justify-content: center;
+
+    /* Independent uncomment this */
     align-items: center;
     height: 100vh;
     background: var(--bgColor);

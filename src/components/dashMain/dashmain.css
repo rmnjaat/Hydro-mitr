@@ -23,8 +23,14 @@
 }
 
 
-@media (max-width: 620px) {
+@media (max-width: 1080px) {
     #main {
         margin-left: 0;
     }
 }
+
+/* @media (max-width: 620px) {
+    #main {
+        margin-left: 0;
+    }
+} */

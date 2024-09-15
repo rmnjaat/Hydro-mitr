@@ -1,6 +1,17 @@
+import axios from "axios";
 import React from "react";
 
 function NavAvtar() {
+  const url = import.meta.env.VITE_API_URL;
+
+  function handlelogOut() {
+    console.log("Clicking logout");
+    axios.get(`${url}/admin/getOut`, { withCredentials: true }).then((res) => {
+      console.log(res.data);
+      window.location.reload();
+    });
+    console.log("Clicked logout");
+  }
   return (
     <li className="nav-item dropdown pe-3">
       <a
@@ -65,7 +76,10 @@ function NavAvtar() {
         </li>
 
         <li>
-          <a className="dropdown-item d-flex align-items-center" href="#">
+          <a
+            className="dropdown-item d-flex align-items-center"
+            onClick={handlelogOut}
+          >
             <i className="bi bi-box-arrow-right"></i>
             <span>Sign Out</span>
           </a>
