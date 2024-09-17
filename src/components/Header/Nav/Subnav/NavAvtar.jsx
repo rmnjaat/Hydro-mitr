@@ -1,15 +1,35 @@
 import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function NavAvtar() {
+function NavAvtar({ role }) {
+
+  const navigate = useNavigate();
+
   const url = import.meta.env.VITE_API_URL;
 
   function handlelogOut() {
-    console.log("Clicking logout");
-    axios.get(`${url}/admin/getOut`, { withCredentials: true }).then((res) => {
-      console.log(res.data);
-      window.location.reload();
-    });
+
+    console.log("Clicking NavAvtar roole", role);
+
+    if (role == "admin") {
+      axios
+        .get(`${url}/admin/getOut`, { withCredentials: true })
+        .then((res) => {
+          console.log(res.data);
+          window.location.reload();
+        });
+    } else if (role == "staff") {
+      console.log("Clicking staff log out" , role);
+      axios
+        .get(`${url}/staff/getOut`, { withCredentials: true })
+        .then((res) => {
+          console.log("Logouting Data :", res.data);
+          window.location.reload();
+          navigate("/login")
+
+        });
+    }
     console.log("Clicked logout");
   }
   return (

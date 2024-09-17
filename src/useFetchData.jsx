@@ -41,22 +41,22 @@ console.log("Selected Id= " , selectedLoc);
   };
 
   useEffect(() => {
-    let Interval = 10000;
+    let Interval = 3000;
     fetchData(filter,selectedLoc);
 
-    // if (filter == "5 min") {
-    //   Interval = 6000;
-    // } else if (filter == "10 min") {
-    //   Interval = 9000;
-    // }
+    if (filter == "5 min") {
+      Interval = 6000;
+    } else if (filter == "10 min") {
+      Interval = 9000;
+    }
 
-    // const IntervalId = setInterval(() => {
-    //   fetchData(filter);
-    // }, Interval);
+    const IntervalId = setInterval(() => {
+      fetchData(filter);
+    }, Interval);
 
-    // return () => {
-    //   clearInterval(IntervalId);
-    // };
+    return () => {
+      clearInterval(IntervalId);
+    };
   }, [filter , selectedLoc]);
 
   return { data, error }; // Return the data to the calling component

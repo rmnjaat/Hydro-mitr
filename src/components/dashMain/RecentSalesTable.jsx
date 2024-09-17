@@ -20,10 +20,10 @@ function RecentSalesTable({ items }) {
         <thead className="table-light">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Customer</th>
-            <th scope="col">Product</th>
-            <th scope="col">Price</th>
-            <th scope="col">Status</th>
+            <th scope="col">Date</th>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+            <th scope="col">Remark</th>
           </tr>
         </thead>
         <tbody>

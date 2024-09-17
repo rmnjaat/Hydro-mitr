@@ -3,9 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import Header from "../Header/Header";
-import SideBar from "../Sidebar/SideBar";
-import DashMain from "../dashMain/DashMain";
 import Dashboard from "../dashMain/Dashboard";
 import Wrapper from "../../Wrapper";
 import MonitorReadings from "../dashMain/MonitorReadings/MonitorReadings";
@@ -13,15 +10,32 @@ import UserProfile from "../UseProfile/UserProfile";
 import UserComplaints from "../dashMain/UserComplaints/UserComplaints";
 import SensorLoc from "../dashMain/sensLoc/SensorLoc";
 import ImageResult from "../dashMain/ImageResult/ImageResult";
+import Form1 from "../StaffTests/Forms/Form1";
+import Form2 from "../StaffTests/Forms/Form2";
+import Form3 from "../StaffTests/Forms/Form3";
+import Form4 from "../StaffTests/Forms/Form4";
+import Form5 from "../StaffTests/Forms/Form5";
+import Form6 from "../StaffTests/Forms/Form6";
+import Form7 from "../StaffTests/Forms/Form7";
+import TestsLists from "../StaffTests/TestsLists";
+import StaffRecord from "../StaffRecord/StaffRecord";
+import AllLoc from "../dashMain/sensLoc/AllLoc";
 
 // Fix Urls in data IFle accordingly
 
 function Controller() {
   const auth = useAuth() || {};
 
+  console.log("Controller rolwe", auth.role);
+
   return (
     <BrowserRouter>
       <Routes>
+        {/* <Route
+          path="/login"
+          element={!false ? <Login /> : <Navigate to="/stafftests" />}
+        ></Route> */}
+
         <Route
           path="/login"
           element={!auth.isLoggedIn ? <Login /> : <Navigate to="/dashboard" />}
@@ -30,8 +44,22 @@ function Controller() {
 
         {/* {true && true ? ( */}
         {auth.isLoggedIn && auth.user ? (
-          <Route path="/" element={<Wrapper></Wrapper>}>
-            <Route path="dashboard" element={<Dashboard />}>
+          <Route path="/" element={<Wrapper role={auth.role}></Wrapper>}>
+            {/* Staff Routes */}
+
+            <Route path="postTest" element={<TestsLists></TestsLists>}></Route>
+            <Route path="postTest/test1" element={<Form1 />} />
+            <Route path="postTest/test2" element={<Form2 />} />
+            <Route path="postTest/test3" element={<Form3 />} />
+            <Route path="postTest/test4" element={<Form4 />} />
+            <Route path="postTest/test5" element={<Form5 />} />
+            <Route path="postTest/test6" element={<Form6 />} />
+            <Route path="postTest/test7" element={<Form7 />} />
+
+            <Route path="pastrecords" element={<StaffRecord/>}></Route>
+
+            {/* Admins Routes */}
+            <Route path="dashboard" element={<Dashboard></Dashboard>}>
               {" "}
             </Route>
             <Route path="monitoring" element={<MonitorReadings />}>
@@ -47,7 +75,7 @@ function Controller() {
             ></Route>
             <Route
               path="sensorslocations"
-              element={<SensorLoc></SensorLoc>}
+              element={<AllLoc></AllLoc>}
             ></Route>
             <Route path="register" element={<SignUp></SignUp>}></Route>
             <Route path="profile" element={<UserProfile></UserProfile>}></Route>

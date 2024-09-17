@@ -18,7 +18,7 @@ const navList = [
     icon: "bi bi-card-list",
     path: "/register", // Added path
   },
-  
+
   // {
   //   _id: 5,
   //   name: "Setting",
@@ -78,4 +78,28 @@ const navItems = [
   },
 ];
 
-export { navList, navItems };
+
+
+
+const staffnavs = [
+  {
+    id: 1,
+    title: "Profile",
+    icon: "bi bi-person",
+    path: "/profile",
+  },
+  {
+    id: 2,
+    title: "Post Test",
+    icon: "bi bi-exclamation-circle",
+    path: "/postTest",
+  },
+  {
+    id: 3,
+    title: "Records",
+    icon: "bi bi-file-earmark-text",
+    path: "/pastrecords",
+  },
+];
+
+export { navList, navItems ,staffnavs };

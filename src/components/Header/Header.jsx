@@ -7,7 +7,7 @@ import SearchBar from './SearchBar';
 import Nav from './Nav/Nav';
 
 
-function Header() {
+function Header({role}) {
   return (
     <header id ="header" className="header fixed-top d-flex align-items-center" >
            
@@ -17,7 +17,7 @@ function Header() {
             <SearchBar></SearchBar>
             {/* {nav} */}
 
-            <Nav></Nav>
+            <Nav role={role}></Nav>
     </header>
   )
 }

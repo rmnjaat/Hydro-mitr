@@ -84,11 +84,16 @@ const loginUser = async (email, password, selectedRole) => {
   }
 };
 
-const checkAuthStatus = async () => {
+const checkAuthStatus = async (role) => {
   try {
-    const response = await axios.get(`${apiUrl}/admin/getUser`, {
-      withCredentials: true,
-    });
+    const response =
+      role == "admin"
+        ? await axios.get(`${apiUrl}/admin/getUser`, {
+            withCredentials: true,
+          })
+        : await axios.get(`${apiUrl}/staff/getUser`, {
+            withCredentials: true,
+          });
     console.log(response);
     const data = await response.data;
     return data;

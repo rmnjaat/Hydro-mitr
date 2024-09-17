@@ -11,10 +11,11 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [role , setRole] = useState("");
 
   useEffect(() => {
     const checkStatus = async () => {
-      const data = await checkAuthStatus();
+      const data = await checkAuthStatus(role);
 
       if (data) {
         setUser({
@@ -23,6 +24,8 @@ const AuthProvider = ({ children }) => {
           lastName: data.lastName,
         });
         setIsLoggedIn(true);
+        // setRole(data.role);
+
       }
     };
 
@@ -40,6 +43,7 @@ const AuthProvider = ({ children }) => {
         lastName: data.lastName,
       });
       setIsLoggedIn(true);
+      setRole(data.role);
     }
     return data;
   };
@@ -92,6 +96,7 @@ const AuthProvider = ({ children }) => {
         lastName: data.lastName,
       });
       setIsLoggedIn(true);
+      
     }
   };
 
@@ -99,6 +104,7 @@ const AuthProvider = ({ children }) => {
     const logout = await logoutUser();
     setIsLoggedIn(false);
     setUser(null);
+    setRole("");
     setTimeout(() => {
       window.location.reload();
     }, 100);
@@ -110,7 +116,10 @@ const AuthProvider = ({ children }) => {
     login,
     signup,
     logout,
+    role,
   };
+
+  console.log("consoling rolew in auth " , role)
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

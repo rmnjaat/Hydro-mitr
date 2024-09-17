@@ -9,12 +9,12 @@ function BudgetChart() {
       radar: {
         shape: "circle",
         indicator: [
-          { name: "Sales", max: 6500 },
-          { name: "Administration", max: 16000 },
-          { name: "Information Technology", max: 30000 },
+          { name: "sensers", max: 6500 },
+          { name: "Dailt test", max: 16000 },
+          { name: "salary ", max: 30000 },
           { name: "Customer Support", max: 38000 },
           { name: "Development", max: 52000 },
-          { name: "Marketing", max: 42000 }, // Changed "marketing" to "Marketing"
+          { name: "Maintaince", max: 42000 }, // Changed "marketing" to "Marketing"
         ],
       },
       series: [

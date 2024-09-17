@@ -4,7 +4,7 @@ import NavNotice from "./Subnav/NavNotice";
 import NavMessage from "./Subnav/NavMessage";
 import NavAvtar from "./Subnav/NavAvtar";
 
-function Nav() {
+function Nav({role}) {
   return (
    
       <nav className="header-nav ms-auto">
@@ -12,7 +12,7 @@ function Nav() {
        
           <NavNotice></NavNotice>
           <NavMessage></NavMessage>
-          <NavAvtar></NavAvtar>
+          <NavAvtar role={role}></NavAvtar>
 
         </ul>
       </nav>

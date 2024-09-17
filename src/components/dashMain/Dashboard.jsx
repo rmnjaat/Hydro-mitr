@@ -46,7 +46,7 @@ function Dashboard() {
             </div>
 
             <div className="col-12">
-              <TopSelling></TopSelling>
+              {/* <TopSelling></TopSelling> */}
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ function Dashboard() {
         <div className="row">
               <RecentActivity></RecentActivity>
               <BudgetReport></BudgetReport>
-              <WebTraffic></WebTraffic>
+              {/* <WebTraffic></WebTraffic> */}
               <News></News>
               </div>
         </div>

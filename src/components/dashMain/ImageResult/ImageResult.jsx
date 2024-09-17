@@ -122,7 +122,7 @@ function ImageResult() {
             {/* 2nd Row */}
             <div className="card p-1 ">
               <div className="card-body ">
-                <div className="card-title"> Test 1</div>
+                <div className="card-title"> Test 2</div>
                 <div className="card2">
                   <div className="col-4">
                     <div className="card m-1">

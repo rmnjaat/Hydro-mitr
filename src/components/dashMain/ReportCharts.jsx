@@ -6,15 +6,15 @@ function ReportCharts() {
   const [data, setData] = useState({
     series: [
       {
-        name: "Sales",
+        name: "ph ",
         data: [31, 40, 28, 51, 42, 82, 56],
       },
       {
-        name: "Revenue",
+        name: "TDS",
         data: [11, 32, 45, 32, 34, 52, 41],
       },
       {
-        name: "Customers",
+        name: "Turbidity",
         data: [15, 11, 32, 18, 9, 24, 11],
       },
     ],
