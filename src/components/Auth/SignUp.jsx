@@ -133,7 +133,7 @@ function SignUp() {
     <>
       <div className="signup-container">
         <div className="signup-form">
-          <h2 className="signup-title">Create New Account</h2>
+          <h2 className="signup-title">Add New Staff</h2>
           <form>
             <div className="form-group">
               <label htmlFor="orgName">Organization Name</label>

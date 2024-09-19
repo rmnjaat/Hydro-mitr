@@ -39,7 +39,7 @@ const Form6 = () => {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      navigate('/stafftests');
+      navigate("/postTest");
     }, 1000); // Redirect after 1 second
   };
 

@@ -5,84 +5,90 @@ import useFetchLocation from "../../../useFetchLocation";
 
 const hardcodedFeedbacks = [
   {
-    Name: "John",
-    LastName: "Doe",
+    Name: "Aarti",
+    LastName: "Sharma",
     Mobile: "9876543210",
-    Complaint: "Water quality in my area is very poor and has a strong odor.",
+    Complaint:
+      "The water quality has deteriorated recently and is now very hard.",
     Location: {
-      _id: "65009876c5a23f07a8b9f1d1",
-      State: "California",
-      City: "Los Angeles",
-      PinCode: "90001",
-      Landmark: "Near Central Park",
+      _id: "65009876c5a23f07a8b9f1d7",
+      State: "Delhi",
+      City: "New Delhi",
+      PinCode: "110001",
+      Landmark: "Near Connaught Place",
     },
   },
   {
-    Name: "Jane",
-    LastName: "Smith",
-    Mobile: "9123456780",
-    Complaint: "The water supply has been inconsistent for the past week.",
-    Location: {
-      _id: "65009876c5a23f07a8b9f1d2",
-      State: "Texas",
-      City: "Dallas",
-      PinCode: "75001",
-      Landmark: "Beside Oak Street",
-    },
-  },
-  {
-    Name: "Michael",
-    LastName: "Johnson",
-    Mobile: "9987654321",
-    Complaint: "The water has a strange taste and seems murky.",
-    Location: {
-      _id: "65009876c5a23f07a8b9f1d3",
-      State: "New York",
-      City: "New York City",
-      PinCode: "10001",
-      Landmark: "Opposite Times Square",
-    },
-  },
-  {
-    Name: "Emily",
-    LastName: "Davis",
-    Mobile: "9876123456",
-    Complaint: "There is no water pressure in my area for the past two days.",
-    Location: {
-      _id: "65009876c5a23f07a8b9f1d4",
-      State: "Florida",
-      City: "Miami",
-      PinCode: "33101",
-      Landmark: "Near Beachside Avenue",
-    },
-  },
-  {
-    Name: "David",
-    LastName: "Williams",
+    Name: "Raj",
+    LastName: "Patel",
     Mobile: "9123456789",
-    Complaint: "Frequent water contamination issues, unsafe for drinking.",
+    Complaint:
+      "There have been frequent outages in the water supply for the last month.",
     Location: {
-      _id: "65009876c5a23f07a8b9f1d5",
-      State: "Illinois",
-      City: "Chicago",
-      PinCode: "60601",
-      Landmark: "Next to Millennium Park",
+      _id: "65009876c5a23f07a8b9f1d8",
+      State: "Delhi",
+      City: "New Delhi",
+      PinCode: "110012",
+      Landmark: "Near South Extension",
     },
   },
   {
-    Name: "Sarah",
-    LastName: "Brown",
-    Mobile: "9765432109",
-    Complaint: "Water smells of chlorine, causing skin irritation.",
+    Name: "Meera",
+    LastName: "Reddy",
+    Mobile: "9987654321",
+    Complaint: "The water has an unusual color and a metallic taste.",
     Location: {
-      _id: "65009876c5a23f07a8b9f1d6",
-      State: "Nevada",
-      City: "Las Vegas",
-      PinCode: "89101",
-      Landmark: "Near Las Vegas Boulevard",
+      _id: "65009876c5a23f07a8b9f1d9",
+      State: "Delhi",
+      City: "New Delhi",
+      PinCode: "110017",
+      Landmark: "Near Vasant Vihar",
+    },
+  },
+  {
+    Name: "Vikram",
+    LastName: "Singh",
+    Mobile: "9876123456",
+    Complaint:
+      "No water flow for the past 24 hours. It's affecting daily activities.",
+    Location: {
+      _id: "65009876c5a23f07a8b9f1da",
+      State: "Delhi",
+      City: "New Delhi",
+      PinCode: "110020",
+      Landmark: "Near India Gate",
+    },
+  },
+  {
+    Name: "Sanya",
+    LastName: "Gupta",
+    Mobile: "9123456791",
+    Complaint:
+      "Unsafe water with high levels of impurities, not suitable for drinking.",
+    Location: {
+      _id: "65009876c5a23f07a8b9f1db",
+      State: "Delhi",
+      City: "New Delhi",
+      PinCode: "110022",
+      Landmark: "Near Kalkaji",
+    },
+  },
+  {
+    Name: "Arjun",
+    LastName: "Kumar",
+    Mobile: "9765432109",
+    Complaint:
+      "Strong chlorine smell in the water, leading to skin and eye irritation.",
+    Location: {
+      _id: "65009876c5a23f07a8b9f1dc",
+      State: "Delhi",
+      City: "New Delhi",
+      PinCode: "110023",
+      Landmark: "Near Rohini",
     },
   },
 ];
+
 function UserComplaints() {
   const { loc, error } = useFetchLocation();
   const list = loc?.location || []; // Extract the location list
@@ -120,7 +126,7 @@ function UserComplaints() {
               >
                 <p style={{ marginTop: "14px", marginBottom: "8px" }}>
                   <strong style={{ color: "#414141", fontSize: "16px" }}>
-                    Name: Raman Jangu
+                    Name: {feedback.Name} {feedback.LastName}
                   </strong>
                 </p>
                 <p style={{ marginBottom: "8px" }}>
@@ -147,9 +153,11 @@ function UserComplaints() {
 
                 <p style={{ marginBottom: "12px", marginTop: "20px" }}>
                   <strong style={{ color: "#414141", fontSize: "16px" }}>
-                    Image:
-                  </strong>
+                    Location:
+                  </strong>{" "}
+                  {feedback.Location.City}, {feedback.Location.State}
                 </p>
+
                 <div
                   style={{ textAlign: "center", width: "100%", height: "auto" }}
                 >

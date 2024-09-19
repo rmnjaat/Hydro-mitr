@@ -40,7 +40,7 @@ const Form1 = () => {
     const fetchLoc = async () => {
       console.log("Making Api request");
       await axios
-      .post(`${URL}/staff/membraneFiltration`,{ ...formData ,location:selectedLoc }, {
+      .post(`${URL}/staff/membraneFiltration`,{ location_id:selectedLoc , ...formData  }, {
         withCredentials: true,
       })
       .then((res) => {
@@ -57,7 +57,7 @@ const Form1 = () => {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      navigate("/stafftests");
+      navigate("/postTest");
     }, 1000); // Redirect after 1 second
   };
 

@@ -20,7 +20,7 @@ function RecentSalesTable({ items }) {
         <thead className="table-light">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Date</th>
+            <th scope="col">Name</th>
             <th scope="col">Parameter</th>
             <th scope="col">Value</th>
             <th scope="col">Remark</th>
@@ -39,7 +39,7 @@ function RecentSalesTable({ items }) {
                     {item.product}
                   </a>
                 </td>
-                <td>${item.price.toFixed(2)}</td>
+                <td>{item.price.toFixed(2)}</td>
                 <td>
                   <span className={`badge bg-${handleStatus(item.status)}`}>
                     {item.status}

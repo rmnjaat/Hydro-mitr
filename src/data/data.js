@@ -62,13 +62,13 @@ const navItems = [
     id: 4,
     title: "Data Visualization",
     icon: "bi bi-graph-up",
-    path: "/data-visualization", // Added path
+    path: "/datavisualization", // Added path
   },
   {
     id: 5,
     title: "Staff Reports",
     icon: "bi bi-file-earmark-text",
-    path: "/staff-reports", // Added path
+    path: "/staffreports", // Added path
   },
   {
     id: 6,

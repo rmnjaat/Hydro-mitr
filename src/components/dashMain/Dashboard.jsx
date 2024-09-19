@@ -33,9 +33,9 @@ function Dashboard() {
         {/* 8+4 = 12 */}
         <div className="col-lg-8">
           <div className="row">
-            {cards &&
+            {/* {cards &&
               cards.length > 0 &&
-              cards.map((card) => <Card key={card._id} card={card}></Card>)}
+              cards.map((card) => <Card key={card._id} card={card}></Card>)} */}
 
             <div className="col-12">
               <Reports></Reports>

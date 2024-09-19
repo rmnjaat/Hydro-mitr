@@ -5,7 +5,7 @@ import "./Form1.css";
 import useFetchLocation from "../../../useFetchLocation";
 import LocationDropdown from "../../../LocationDropdown";
 
-const Form7 = () => {
+const Form8 = () => {
   const [selectedLoc, setSelectedLoc] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -26,11 +26,11 @@ const Form7 = () => {
     const formData = new FormData();
     formData.append("image", selectedFile);
     formData.append("location", selectedLoc);
-    
+   
 
     try {
       const response = await axios.post(
-        `${url}/staff/microPlastics`,
+        `${url}/staff/polythene`,
           formData,
         {
           headers: {
@@ -95,4 +95,4 @@ const Form7 = () => {
   );
 };
 
-export default Form7;
+export default Form8;
