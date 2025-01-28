@@ -28,6 +28,14 @@ Welcome to the **Water Quality Monitoring System** project! This system is desig
 
 ---
 
+## **FLow Chart**
+![image](https://github.com/user-attachments/assets/f2d07292-e6d8-494f-aac4-468517bf09e8)
+![image](https://github.com/user-attachments/assets/52598ade-071e-4bf6-968c-d0a18c1c8d62)
+![image](https://github.com/user-attachments/assets/fbff0c59-6d97-4779-992c-4bf37812a69e)
+
+
+
+
 ## 🌟 **Features Overview** 🌟
 
 ### 🛠️ **Admin Portal** 
